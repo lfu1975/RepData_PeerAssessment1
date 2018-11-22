@@ -73,24 +73,6 @@ hist(total$steps,col="red",breaks=20, main ="Histogram of Total Steps per Day", 
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
-```r
-dev.copy(png,"totalstephistogram.png")
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
-
 ### 3.List the mean and median of steps taken daily
 
 Calculate the mean of daily taken steps
@@ -145,24 +127,6 @@ ggplot(datainterval,aes(interval,mean)) +
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 
-```r
-dev.copy(png,"5minuteinterval.png")
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
-
 ###5. List the maximum value of average steps in 5-minutes intervals across months
 
 
@@ -207,24 +171,6 @@ hist(sub_total$tsteps,col="red",breaks=20, main ="Histogram of Total Steps per D
 ```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
-
-```r
-dev.copy(png,"histogramreplot.png")
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 
 calculate the mean of the new dataset
 
@@ -313,21 +259,3 @@ ggplot(sum_day,aes(interval,mean)) +
 ```
 
 ![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png)
-
-```r
-dev.copy(png,"comparison.png")
-```
-
-```
-## png 
-##   3
-```
-
-```r
-dev.off()
-```
-
-```
-## png 
-##   2
-```
