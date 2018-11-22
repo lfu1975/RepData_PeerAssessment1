@@ -47,7 +47,7 @@ calculate the sum of steps grouped by date, and plot the histogram
     total <- filter(total,!is.na(steps)==TRUE)
     hist(total$steps,col="red",breaks=20, main ="Histogram of Total Steps per Day", xlab="Steps", ylab="Frequency")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-2-1.png)
+![](PA1_template_files/figure-markdown_strict/total-1.png)
 
     dev.copy(png,"totalstephistogram.png")
 
@@ -93,7 +93,7 @@ the mean based on groups of interval, and plot the mean of steps in
             ggtitle("Daily Average Steps in 5-minutes Intervals") +
             theme(plot.title = element_text(hjust = 0.5))
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-4-1.png)
 
     dev.copy(png,"5minuteinterval.png")
 
@@ -138,7 +138,7 @@ interval and re-plot the histogram
 
     hist(sub_total$tsteps,col="red",breaks=20, main ="Histogram of Total Steps per Day", xlab="Steps", ylab="Frequency")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-7-1.png)
 
     dev.copy(png,"histogramreplot.png")
 
@@ -216,7 +216,7 @@ grouped by the weekday or weekend catogories
             ggtitle("Comparison of Daily Average Steps in Weekdays vs Weekends") +
             theme(plot.title = element_text(hjust = 0.5))
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-11-1.png)
 
     dev.copy(png,"comparison.png")
 
