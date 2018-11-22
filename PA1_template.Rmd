@@ -2,7 +2,9 @@
 title: "PA1_template"
 output: html_document
 ---
-
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 ## Reproducible research week2 project
 
 ### 1. Load file
@@ -28,8 +30,6 @@ total <- summarize(grp,sum=sum(steps))%>%
 total <- filter(total,!is.na(steps)==TRUE)
 hist(total$steps,col="red",breaks=20, main ="Histogram of Total Steps per Day", xlab="Steps", ylab="Frequency")
 
-dev.copy(png,"totalstephistogram.png")
-dev.off()
 ```
 
 ### 3.List the mean and median of steps taken daily
@@ -65,8 +65,7 @@ ggplot(datainterval,aes(interval,mean)) +
         ggtitle("Daily Average Steps in 5-minutes Intervals") +
         theme(plot.title = element_text(hjust = 0.5))
 
-dev.copy(png,"5minuteinterval.png")
-dev.off()
+
 ```
 
 ###5. List the maximum value of average steps in 5-minutes intervals across months
@@ -97,9 +96,7 @@ sub_total <- summarize(activitysub,sum=sum(steps)) %>%
 
 hist(sub_total$tsteps,col="red",breaks=20, main ="Histogram of Total Steps per Day", xlab="Steps", ylab="Frequency")
 
-dev.copy(png,"histogramreplot.png")
-dev.off()
-    
+
 ```
 
 calculate the mean of the new dataset
@@ -142,6 +139,5 @@ ggplot(sum_day,aes(interval,mean)) +
         ylab("Average Steps") +
         ggtitle("Comparison of Daily Average Steps in Weekdays vs Weekends") +
         theme(plot.title = element_text(hjust = 0.5))
-dev.copy(png,"comparison.png")
-dev.off()
+
 ```
