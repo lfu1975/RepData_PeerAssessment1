@@ -49,6 +49,16 @@ calculate the sum of steps grouped by date, and plot the histogram
 
 ![](PA1_template_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
+    dev.copy(png,"totalstephistogram.png")
+
+    ## png 
+    ##   3
+
+    dev.off()
+
+    ## png 
+    ##   2
+
 ### 3.List the mean and median of steps taken daily
 
 Calculate the mean of daily taken steps
@@ -85,6 +95,16 @@ the mean based on groups of interval, and plot the mean of steps in
 
 ![](PA1_template_files/figure-markdown_strict/unnamed-chunk-5-1.png)
 
+    dev.copy(png,"5minuteinterval.png")
+
+    ## png 
+    ##   3
+
+    dev.off()
+
+    ## png 
+    ##   2
+
 ### 5. List the maximum value of average steps in 5-minutes intervals across months
 
     max<- which(datainterval$mean==max(datainterval$mean))
@@ -119,6 +139,16 @@ interval and re-plot the histogram
     hist(sub_total$tsteps,col="red",breaks=20, main ="Histogram of Total Steps per Day", xlab="Steps", ylab="Frequency")
 
 ![](PA1_template_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+
+    dev.copy(png,"histogramreplot.png")
+
+    ## png 
+    ##   3
+
+    dev.off()
+
+    ## png 
+    ##   2
 
 calculate the mean of the new dataset
 
@@ -178,7 +208,6 @@ grouped by the weekday or weekend catogories
             group_by(weekday,interval)%>%
             summarize(mean=mean(steps))
 
-    png("comparison.png", width=480,height=480)
     ggplot(sum_day,aes(interval,mean)) +
             geom_line(aes(col=weekday))+
             facet_grid(weekday~.) +
@@ -186,6 +215,14 @@ grouped by the weekday or weekend catogories
             ylab("Average Steps") +
             ggtitle("Comparison of Daily Average Steps in Weekdays vs Weekends") +
             theme(plot.title = element_text(hjust = 0.5))
+
+![](PA1_template_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+
+    dev.copy(png,"comparison.png")
+
+    ## png 
+    ##   3
+
     dev.off()
 
     ## png 
