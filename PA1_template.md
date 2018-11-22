@@ -178,7 +178,7 @@ grouped by the weekday or weekend catogories
             group_by(weekday,interval)%>%
             summarize(mean=mean(steps))
 
-
+    png("comparison.png", width=480,height=480)
     ggplot(sum_day,aes(interval,mean)) +
             geom_line(aes(col=weekday))+
             facet_grid(weekday~.) +
@@ -186,5 +186,7 @@ grouped by the weekday or weekend catogories
             ylab("Average Steps") +
             ggtitle("Comparison of Daily Average Steps in Weekdays vs Weekends") +
             theme(plot.title = element_text(hjust = 0.5))
+    dev.off()
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-12-1.png)
+    ## png 
+    ##   2
